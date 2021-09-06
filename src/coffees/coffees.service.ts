@@ -21,7 +21,7 @@ export class CoffeesService {
     const coffee = this.coffees.find((item) => item.id === +id);
 
     if (!coffee) {
-      throw new NotFoundException(`Coffee #${id} not found`)
+      throw new NotFoundException(`Coffee #${id} not found`);
     }
 
     return coffee;
@@ -29,6 +29,7 @@ export class CoffeesService {
 
   create(createCoffeeDto: any) {
     this.coffees.push(createCoffeeDto);
+    return createCoffeeDto;
   }
 
   update(id: string, updateCoffeeDto: UpdateCoffeeDto) {
