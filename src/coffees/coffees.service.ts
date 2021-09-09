@@ -6,6 +6,7 @@ import { Connection, Repository } from 'typeorm';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { Flavor } from './entities/flavor.entity';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
+import { Event } from '../events/entities/event.entity';
 
 @Injectable()
 export class CoffeesService {
@@ -59,6 +60,7 @@ export class CoffeesService {
       ));
 
     const coffee = await this.coffeeRepository.preload({
+      recommendations: 0,
       id: +id,
       ...updateCoffeeDto,
       flavors,
