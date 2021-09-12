@@ -6,6 +6,7 @@ import { CoffeesModule } from './coffees/coffees.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CoffeeRatingModule } from './coffee-rating/coffee-rating.module';
 import { ConfigModule } from '@nestjs/config';
+import { CommonModule } from './common/common.module';
 import appConfig from './config/app.config';
 
 @Module({
@@ -25,6 +26,7 @@ import appConfig from './config/app.config';
       synchronize: process.env.NODE_ENV !== 'production',
     }),
     CoffeeRatingModule,
+    CommonModule,
   ],
   controllers: [AppController],
   providers: [AppService],
