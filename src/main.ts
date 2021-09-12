@@ -4,7 +4,6 @@ import { ValidationPipe } from '@nestjs/common';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { WrapResponseInterceptor } from './common/interceptors/wrap-response.interceptor';
 import { TimeoutInterceptor } from './common/interceptors/timeout.interceptor';
-import { ParseIntPipe } from './common/pipes/parse-int.pipe';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
